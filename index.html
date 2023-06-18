@@ -202,10 +202,6 @@
         }
     
         function addToCart(productName, price) {
-          if (!cartWindow || cartWindow.closed) {
-            cartWindow = window.open('cart.html');
-          }
-    
           const productInfo = {
             productName: productName,
             price: price

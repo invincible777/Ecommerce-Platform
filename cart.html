@@ -62,131 +62,129 @@
         </div>
     </footer>
 
-  <script>
-    // Cart data
-    let cartItems = [];
-  
-    // Function to add item to the cart
-    function addToCart(productName, price) {
-      let cartItem = cartItems.find(item => item.productName === productName);
-  
-      if (cartItem) {
-        cartItem.count++;
-      } else {
-        cartItem = {
-          productName: productName,
-          price: price,
-          count: 1
-        };
-        cartItems.push(cartItem);
+    <script>
+      const cartItems = [];
+    
+      function addToCart(productName, price) {
+        let cartItem = cartItems.find(item => item.productName === productName);
+    
+        if (cartItem) {
+          cartItem.count++;
+        } else {
+          cartItem = {
+            productName,
+            price,
+            count: 1
+          };
+          cartItems.push(cartItem);
+        }
+    
+        renderCart();
       }
-  
-      renderCart();
-    }
-  
-    // Function to remove item from the cart
-    function removeFromCart(productName) {
-      cartItems = cartItems.filter(item => item.productName !== productName);
-      renderCart();
-    }
-  
-    // Function to increase item count in the cart
-    function increaseCount(productName) {
-      let cartItem = cartItems.find(item => item.productName === productName);
-      if (cartItem) {
-        cartItem.count++;
+    
+      function removeFromCart(productName) {
+        cartItems = cartItems.filter(item => item.productName !== productName);
+        renderCart();
       }
-      renderCart();
-    }
-  
-    // Function to decrease item count in the cart
-    function decreaseCount(productName) {
-      let cartItem = cartItems.find(item => item.productName === productName);
-      if (cartItem && cartItem.count > 1) {
-        cartItem.count--;
+    
+      function increaseCount(productName) {
+        let cartItem = cartItems.find(item => item.productName === productName);
+        if (cartItem) {
+          cartItem.count++;
+        }
+        renderCart();
       }
-      renderCart();
-    }
-  
-    // Function to render the cart
-    function renderCart() {
-      const cartTable = document.getElementById('cart-table');
-      // Clear existing table rows
-      cartTable.innerHTML = `
-        <tr>
-          <th>Product</th>
-          <th>Count</th>
-          <th>Price</th>
-          <th>Action</th>
-        </tr>
-      `;
-
-      let totalAmount = 0; // Variable to store the total amount
-
-      // Render new table rows with cart data
-      for (let i = 0; i < cartItems.length; i++) {
-        const item = cartItems[i];
-
-        const row = document.createElement('tr');
-
-        const productNameCell = document.createElement('td');
-        productNameCell.textContent = item.productName;
-        row.appendChild(productNameCell);
-
-        const countCell = document.createElement('td');
-        countCell.textContent = item.count;
-        row.appendChild(countCell);
-
-        const priceCell = document.createElement('td');
-        priceCell.textContent = item.price;
-        row.appendChild(priceCell);
-
-        const actionCell = document.createElement('td');
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.onclick = function() {
-          removeFromCart(item.productName);
-        };
-        actionCell.appendChild(removeButton);
-
-        const decreaseButton = document.createElement('button');
-        decreaseButton.textContent = '-';
-        decreaseButton.onclick = function() {
-          decreaseCount(item.productName);
-        };
-        actionCell.appendChild(decreaseButton);
-
-        const increaseButton = document.createElement('button');
-        increaseButton.textContent = '+';
-        increaseButton.onclick = function() {
-          increaseCount(item.productName);
-        };
-        actionCell.appendChild(increaseButton);
-
-        row.appendChild(actionCell);
-
-        cartTable.appendChild(row);
-
-        // Update the total amount
-        totalAmount += item.price * item.count;
+    
+      function decreaseCount(productName) {
+        let cartItem = cartItems.find(item => item.productName === productName);
+        if (cartItem && cartItem.count > 1) {
+          cartItem.count--;
+        }
+        renderCart();
       }
-
-      // Render the summary row
-      const summaryRow = document.createElement('tr');
-      summaryRow.className = 'cart-summary-row';
-      summaryRow.innerHTML = `
-        <td colspan="2"></td>
-        <td><strong>Total Amount:</strong></td>
-        <td>${totalAmount.toFixed(2)}</td>
-      `;
-      cartTable.appendChild(summaryRow);
-    }
-
-    // Listen for postMessage events from the index.html page
-    window.addEventListener('message', function(event) {
-      const productInfo = event.data;
-      addToCart(productInfo.productName, productInfo.price);
-    });
-  </script>
+    
+      function renderCart() {
+        const cartTable = document.getElementById('cart-table');
+        cartTable.innerHTML = `
+          <tr>
+            <th>Product</th>
+            <th>Count</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        `;
+    
+        let totalAmount = 0;
+    
+        cartItems.forEach(item => {
+          const row = document.createElement('tr');
+    
+          const productNameCell = document.createElement('td');
+          productNameCell.textContent = item.productName;
+          row.appendChild(productNameCell);
+    
+          const countCell = document.createElement('td');
+          countCell.textContent = item.count;
+          row.appendChild(countCell);
+    
+          const priceCell = document.createElement('td');
+          priceCell.textContent = item.price;
+          row.appendChild(priceCell);
+    
+          const actionCell = document.createElement('td');
+    
+          const removeButton = document.createElement('button');
+          removeButton.textContent = 'Remove';
+          removeButton.onclick = () => {
+            removeFromCart(item.productName);
+          };
+          actionCell.appendChild(removeButton);
+    
+          const decreaseButton = document.createElement('button');
+          decreaseButton.textContent = '-';
+          decreaseButton.onclick = () => {
+            decreaseCount(item.productName);
+          };
+          actionCell.appendChild(decreaseButton);
+    
+          const increaseButton = document.createElement('button');
+          increaseButton.textContent = '+';
+          increaseButton.onclick = () => {
+            increaseCount(item.productName);
+          };
+          actionCell.appendChild(increaseButton);
+    
+          row.appendChild(actionCell);
+    
+          cartTable.appendChild(row);
+    
+          totalAmount += item.price * item.count;
+        });
+    
+        const summaryRow = document.createElement('tr');
+        summaryRow.className = 'cart-summary-row';
+    
+        const emptyCell1 = document.createElement('td');
+        const emptyCell2 = document.createElement('td');
+    
+        const totalAmountLabelCell = document.createElement('td');
+        totalAmountLabelCell.innerHTML = '<strong>Total Amount:</strong>';
+    
+        const totalAmountCell = document.createElement('td');
+        totalAmountCell.textContent = totalAmount.toFixed(2);
+    
+        summaryRow.appendChild(emptyCell1);
+        summaryRow.appendChild(emptyCell2);
+        summaryRow.appendChild(totalAmountLabelCell);
+        summaryRow.appendChild(totalAmountCell);
+    
+        cartTable.appendChild(summaryRow);
+      }
+    
+      window.addEventListener('message', event => {
+        const productInfo = event.data;
+        addToCart(productInfo.productName, productInfo.price);
+      });
+    </script>    
 </body>
 </html>

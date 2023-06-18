@@ -48,7 +48,7 @@
                 <form action="#">
                     <p>
                         <label for="username">Full Name : </label>
-                        <input type="text" id="username" placeholder="John Doe">
+                        <input type="text" id="username" placeholder="John Doe" required>
                     </p>
                     <p>
                         <label for="contact">Contact Number : </label>
@@ -56,18 +56,21 @@
                     </p>
                     <p>
                         <label for="email">Email-ID : </label>
-                        <input type="email" id="email" placeholder="johndoe@gmail.com">
+                        <input type="email" id="email" placeholder="johndoe@gmail.com" required>
                     </p>
                     <p>
                         <label for="password">New Password : </label>
-                        <input type="password" id="password" placeholder="Atleast 8 alpha-numerics">
+                        <input type="password" id="password" placeholder="Atleast 8 alpha-numerics" required>
                     </p>
-                    <p>
+                    <p id="confirm-password-field" style="display: none;">
                         <label for="confirm-password">Confirm Password : </label>
-                        <input type="password" id="confirm-password" placeholder="Re-enter password">
+                        <input type="password" id="confirm-password" placeholder="Re-enter password" required>
                     </p>
+                    <p id="confirm-password-error"></p>
                     <p id="register-button">
                         <button value="Register">Register</button>
+                        <button type="button" id="reset-button">Reset</button>
+
                     </p>
                 </form>
             </main>
@@ -76,5 +79,71 @@
             </footer>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Fade in the register container when page loads -->
+    <script>
+        $(document).ready(function() {
+            $('.inner-box').hide().fadeIn(500);
+        });
+    </script>
+
+    <!-- Highlight focused input fields -->
+    <script>
+        $(document).ready(function() {
+          $('input[type="text"], input[type="number"], input[type="email"], input[type="password"]').focus(function() {
+            $(this).addClass('highlight');
+          }).blur(function() {
+            $(this).removeClass('highlight');
+          });
+        });
+    </script>
+        
+    <!-- Confirm password field shows only when a password is added -->
+    <script>
+        $(document).ready(function() {
+            $('#password').on('input', function() {
+                if ($(this).val() !== '') $('#confirm-password-field').slideDown(500);
+                else $('#confirm-password-field').slideUp(500);
+            });
+        });
+    </script>
+
+    <!-- Show/hide password on hover -->
+    <script>
+        $(document).ready(function() {
+            $('input[type="password"]').hover(function() {
+            $(this).attr('type', 'text');
+            }, function() {
+            $(this).attr('type', 'password');
+            });
+        });
+    </script>
+
+    <!-- Reset field values -->
+    <script>
+        $(document).ready(function() {
+          $('#reset-button').click(function() {
+            $('form')[0].reset();
+          });
+        });
+    </script>
+
+    <!-- Check if new password is confirmed -->
+    <script>
+        var passwordInput = document.getElementById('password');
+        var confirmPasswordInput = document.getElementById('confirm-password');
+        var confirmPasswordError = document.getElementById('confirm-password-error');
+        
+        confirmPasswordInput.addEventListener('input', function() {
+            var password = passwordInput.value;
+            var confirmPassword = confirmPasswordInput.value;
+            
+            if (password === confirmPassword) confirmPasswordError.textContent = 'Password matched';
+            else confirmPasswordError.textContent = 'Passwords do not match!!';
+        });
+    </script>
+      
 </body>
 </html>

@@ -63,5 +63,46 @@
             </footer>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Fade in the login container when page loads -->
+    <script>
+        $(document).ready(function() {
+            $('.inner-box').hide().fadeIn(500);
+        });
+    </script>
+
+    <!-- Highlight focused input fields -->
+    <script>
+        $(document).ready(function() {
+          $('input[type="text"], input[type="password"]').focus(function() {
+            $(this).addClass('highlight');
+          }).blur(function() {
+            $(this).removeClass('highlight');
+          });
+        });
+    </script>
+
+    <!-- Show/hide password on hover -->
+    <script>
+        $(document).ready(function() {
+            $('input[type="password"]').hover(function() {
+            $(this).attr('type', 'text');
+            }, function() {
+            $(this).attr('type', 'password');
+            });
+        });
+    </script>
+
+    <!-- Reset field values -->
+    <script>
+        $(document).ready(function() {
+          $('#reset-button').click(function() {
+            $('form')[0].reset();
+          });
+        });
+    </script>
+
 </body>
 </html>
