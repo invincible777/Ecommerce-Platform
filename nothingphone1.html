@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Store</title>
+    <link rel="icon" href="images/360-logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="images/360-logo.png" alt="360 Store">
+            </div>
+            <div id="search">
+                <input type="text" id="search_box" placeholder="Search for products, brands and more...">
+                <input type="button" id="search_button" value="🔍">
+            </div>
+            <label for="language"></label>
+            <select name="language" id="language">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="French">French</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbutton">Account
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="register.html">Sign-In/Up</a>
+                    <a href="orders.html">Orders</a>
+                </div>
+            </div>
+            <a href="cart.html">MyBasket <img src="images/Cart.png"></a>
+        </nav>
+        <div class="navbar">
+            <a href="airpods.html"><img src="images/AppleLogo.png"></a>
+            <a href="s23ultra.html"><img src="images/SamsungLogo.png"></a>
+            <a href="nothingphone1.html"><img src="images/NothingLogo.png"></a>
+        </div>
+    </header>
+    <section>
+        <div href="" class="card">
+            <a href= ""><img src="images/Nothing Phone 1/1.jpg" alt="Nothing Phone 1"></a>
+        </div>
+        <div href="" class="card">
+            <a href= ""><img src="images/Nothing Phone 1/4.jpg" alt="Nothing Phone 1"></a>
+        </div>
+        <div href="" class="card">
+            <a href= ""><img src="images/Nothing Phone 1/2.jpg" alt="Nothing Phone 1"></a>
+    </section>
+    <section>
+        <div href="" class="card">
+            <div class="card-content">
+                <div class="card-title">Nothing Phone 1</div>
+                <div class="card-description">Nothing Phone (1) (Black, 128 GB)  (8 GB RAM)</div>
+                <ul>
+                    <li>8 GB RAM | 128 GB ROM</li>
+                    <li>16.64 cm (6.55 inch) Full HD+ Display</li>
+                    <li>50MP + 50MP | 16MP Front Camera</li>
+                    <li>4500 mAh Lithium-ion Battery</li>
+                    <li>Qualcomm Snapdragon 778G+ Processor</li>
+                    <li>Meet the Glyph Interface. A New Way to Communicate</li>
+                    <li>1 Billion Colours, True-to-Life Full HD Flexible OLED Display with HDR10+ for Richer Colour and Deeper Contrasts.</li>
+                </ul>
+                <div class="rr">1.03M+ reviews | 4.5🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 29,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Nothing Phone 1', 29999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <h2>Product Reviews</h2>
+
+    <div class="review">
+        <div class="crux">
+            <h4>Delightful</h4>
+            <i class="icon fa-solid fa-caret-down"></i>
+        </div>
+        <div class="detail">
+            <p>Good all-rounder!
+
+                Edit post 15days of using the device:
+                -Cameras have improved significantly with the OTA update. Really have high hopes that with a few more tweaks, this will be one of the best cameras in this segment.
+                - Post the notorious last OTA update which has come in, charging has taken a hit. The device now charges 80-85% in 60mins, whereas it used to charge around 90%+ before the update. The messed up this update big time.
+                Some folks have complained about other issues but i have not noticed anything of that sort.
+                Hopefully, they will be careful before rolling out updates in the future.
+                Would still recommend this for any person looking for a solid, no-compromise premium midrange device.
+                
+                Here are my observations post 48 hrs of owning the device:
+                
+                - The display is pretty good. Yes, brightness is not on par with other devices of this budget but its not bad. Its just okay.
+                - Tested out the cameras and well the rear imx766 is pretty well optimized. Colour balance can (and hopefully will) be worked on to improve it. The JN1 sensor had a ton of shade change when switching from the main lens. Things need to be look led into to bring that to par.
+                - Even though there's a stereo speaker, its more like 70-30 with most coming from the bottom grill.
+                - I do play games on my mobile, particularly like Injustice 2 and Dragon Ball Lengends and the battery drain( with game mode on) has been okay. Its not huge but not as efficient as one might imagine. Gameplay has been smooth for both of them. But due to having an aluminium frame, the device does heat up a bit. It does cool down pretty fast and the heating does not cause any lags/frame drops. Overall, i got a solid 6hr 24mins SOT with adaptive refresh, wifi+ mobile data always and around 40-50% screen brightness on a single SIM.
+                - The glyph lights were an important factor towards my interest in this device. While they didn't disappoint, i do agree that the Nothing team and we as a community need to come up with more usecases as to where they could be used. I am a guy who loves to turn his device face down at work/when busy to prevent distraction but unfortunately the glyph lights are more distracting to me lol.
+                - UI experience even though clean has numerous bugs. I understand its a new UI they have and hopefully with time bugs get removed.
+                - Cellular reception and mobile data has been brilliant.
+                
+                I probably have mentioned most of the necessary details an everyday user might experience with this device. I really hope they improve the cameras, gradually remove the bugs in the UI and probably have a look at improving the battery optimisation.
+                
+                In short, folks who want a solid 7/10 all round device with few to no compromises can absolutely go for this device.
+                Cheers!</p>
+        </div>
+    </div>
+
+    <div class="review">
+        <div class="crux">
+            <h4>Best in the market!</h4>
+            <i class="icon fa-solid fa-caret-down"></i>
+        </div>
+        <div class="detail">
+            <p>The camera is amazing.
+                I've attached the samples.
+                The regular photo does the job fine (2nd pic was through regular mode).
+                But if you open the expert mode and fiddle around with ISO and shutter speed, you'll get some really great shots (1st and 3rd pic).
+                
+                The battery life before update gave a decent 6+hr SOT, but after update it's around 9hr which is simply amazing.
+                Also the refresh rate was 120Hz, so if you limit it to 60 you may see even better battery life.
+                
+                I would highly recommend this device.
+                The Glyph, Wireless charging and all are just added bonuses.
+                The real "phone" is great too, and I think it will continue to get better with updates.
+                
+                
+                Only problem right now is that the accessories are expensive, especially the Bumper Case, rest of the accessories are still justifiable.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">&copy;<span id="year"> </span><span> 360 Store. All rights reserved.</span></div>
+        <div>
+            <img src="images/360-logo.png" id="brand" alt="360 Store">
+        </div>
+    </footer>
+    <script>
+        let cartWindow = null;
+    
+        function openCart() {
+          if (!cartWindow || cartWindow.closed) {
+            cartWindow = window.open('cart.html');
+          }
+        }
+    
+        function addToCart(productName, price) {
+          if (!cartWindow || cartWindow.closed) {
+            cartWindow = window.open('cart.html');
+          }
+    
+          const productInfo = {
+            productName: productName,
+            price: price
+          };
+          cartWindow.postMessage(productInfo, '*');
+        }
+
+        //Review Section
+        const reviews = document.querySelectorAll('.review');
+
+        reviews.forEach(review => {
+            const icon = review.querySelector('.icon');
+            const detail = review.querySelector('.detail');
+
+            review.addEventListener('click', () => {
+                
+                if(icon.classList.contains('active')) {
+                    icon.classList.remove('active');
+                    detail.style.maxHeight = null;
+                } else {
+                    icon.classList.add('active');
+                    detail.style.maxHeight = detail.scrollHeight + 'px';
+                }
+                
+            })
+        })
+      </script>
+</body>
+</html>

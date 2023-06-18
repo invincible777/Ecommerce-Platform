@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Store</title>
+    <link rel="icon" href="images/360-logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="images/360-logo.png" alt="360 Store">
+            </div>
+            <div id="search">
+                <input type="text" id="search_box" placeholder="Search for products, brands and more...">
+                <input type="button" id="search_button" value="🔍">
+            </div>
+            <label for="language"></label>
+            <select name="language" id="language">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="French">French</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbutton">Account
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="register.html">Sign-In/Up</a>
+                    <a href="orders.html">Orders</a>
+                </div>
+            </div>
+            <a href="cart.html">MyBasket <img src="images/Cart.png"></a>
+        </nav>
+        <div class="navbar">
+            <a href="airpods.html"><img src="images/AppleLogo.png"></a>
+            <a href="s23ultra.html"><img src="images/SamsungLogo.png"></a>
+            <a href="nothingphone1.html"><img src="images/NothingLogo.png"></a>
+        </div>
+    </header>
+    <section>
+        <div href="" class="card">
+            <a href= ""><img src="images/Airpods/3.jpg" alt="Apple Airpods"></a>
+        </div>
+        <div href="" class="card">
+            <a href= ""><img src="images/Airpods/1.jpg" alt="Apple Airpods"></a>
+        </div>
+        <div href="" class="card">
+            <a href= ""><img src="images/Airpods/2.jpg" alt="Apple Airpods"></a>
+        </div>
+        <div href="" class="card">
+            <a href= ""><img src="images/Airpods/4.jpg" alt="Apple Airpods"></a>
+        </div>
+    </section>
+    <section>
+        <div href="" class="card">
+            <div class="card-content">
+                <div class="card-title">Apple Airpods</div>
+                <div class="card-description">Apple AirPods(2nd gen) with Charging Case Bluetooth Headset with Mic  (White, True Wireless)</div>
+                <ul>
+                    <li>With Mic : Yes</li>
+                    <li>Automatically on, automatically connected</li>
+                    <li>Easy setup for all your Apple devices</li>
+                    <li>Quick access to Siri by saying : Hey Siri</li>
+                    <li>Double-tap to play or skip forward</li>
+                    <li>1 Year Warranty</li>
+                    <li>Cash on Delivery available</li>
+                </ul>
+                <div class="rr">1B+ reviews | 4.7🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 9,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Apple Airpods', 9999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <h2>Product Reviews</h2>
+
+    <div class="review">
+        <div class="crux">
+            <h4>Wonderful</h4>
+            <i class="icon fa-solid fa-caret-down"></i>
+        </div>
+        <div class="detail">
+            <p>so many SARDAR boys looking for ear phones that fit with their turban without any pain. Guys, beleive my, its perfect for that. This is my best apple product. i don't like apple phones. Android based mobiles are always my preferences. But Apple Airpods are my fav Apple product. I am a Sardar and always wear Turban. from a long time i was looking for a bluetooth ear phone that fit in my ear with turban. i wasted too much money. Believe me with turban (Pag, Pagdi) it never give me any kind of pain. best.. kudos</p>
+        </div>
+    </div>
+
+    <div class="review">
+        <div class="crux">
+            <h4>Great product</h4>
+            <i class="icon fa-solid fa-caret-down"></i>
+        </div>
+        <div class="detail">
+            <p>Awesome product by apple
+                If you are bass lover then this is not for u
+                Otherwise best in all class</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">&copy;<span id="year"> </span><span> 360 Store. All rights reserved.</span></div>
+        <div>
+            <img src="images/360-logo.png" id="brand" alt="360 Store">
+        </div>
+    </footer>
+    <script>
+        let cartWindow = null;
+    
+        function openCart() {
+          if (!cartWindow || cartWindow.closed) {
+            cartWindow = window.open('cart.html');
+          }
+        }
+    
+        function addToCart(productName, price) {
+          if (!cartWindow || cartWindow.closed) {
+            cartWindow = window.open('cart.html');
+          }
+    
+          const productInfo = {
+            productName: productName,
+            price: price
+          };
+          cartWindow.postMessage(productInfo, '*');
+        }
+
+        //Review Section
+        const reviews = document.querySelectorAll('.review');
+
+        reviews.forEach(review => {
+            const icon = review.querySelector('.icon');
+            const detail = review.querySelector('.detail');
+
+            review.addEventListener('click', () => {
+                
+                if(icon.classList.contains('active')) {
+                    icon.classList.remove('active');
+                    detail.style.maxHeight = null;
+                } else {
+                    icon.classList.add('active');
+                    detail.style.maxHeight = detail.scrollHeight + 'px';
+                }
+                
+            })
+        })
+      </script>
+</body>
+</html>

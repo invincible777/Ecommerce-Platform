@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="images/360-logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="images/360-logo.png" alt="360 Store">
+            </div>
+            <div id="search">
+                <input type="text" id="search_box" placeholder="Search for products, brands and more...">
+                <input type="button" id="search_button" value="🔍">
+            </div>
+            <label for="language"></label>
+            <select name="language" id="language">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="French">French</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbutton">Account
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="register.html">Sign-In/Up</a>
+                    <a href="orders.html">Orders</a>
+                </div>
+            </div>
+            <a href="#" onclick="openCart()">MyBasket <img src="images/Cart.png"></a>
+        </nav>
+        <div class="navbar">
+            <a href="airpods.html"><img src="images/AppleLogo.png"></a>
+            <a href="s23ultra.html"><img src="images/SamsungLogo.png"></a>
+            <a href="nothingphone1.html"><img src="images/NothingLogo.png"></a>
+        </div>
+    </header>
+    <h2>Top Branded Products</h2>
+    <section>
+        <div class="card">
+            <a href= "airpods.html"><img src="images/Airpods/1.jpg" alt="Apple Airpods"></a>
+            <div class="card-content">
+                <div class="card-title">Apple Airpods</div>
+                <div class="card-description">Apple AirPods(2nd gen) with Charging Case Bluetooth Headset with Mic  (White, True Wireless)</div>
+                <div class="rr">1B+ reviews | 4.7🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 9,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Apple Airpods', 9999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <a href= "s23ultra.html"><img src="images/Samsung Galaxy S23 Ultra/4.jpg" alt="Samsung S23 Ultra"></a>
+            <div class="card-content">
+                <div class="card-title">Samsung S23 Ultra</div>
+                <div class="card-description">SAMSUNG Galaxy S23 Ultra 5G (Phantom Black, 256 GB)  (12 GB RAM)</div>
+                <div class="rr">20M+ reviews | 4.9🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 124,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Samsung S23 Ultra', 124999)">Add to Cart</a></button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <a href= "nothingphone1.html"><a href= "nothingphone1.html"><img src="images/Nothing Phone 1/4.jpg" alt="Nothing Phone 1"></a></a>
+            <div class="card-content">
+                <div class="card-title">Nothing Phone 1</div>
+                <div class="card-description">Nothing Phone (1) (Black, 128 GB)  (8 GB RAM)</div>
+                <div class="rr">1.03M+ reviews | 4.5🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 29,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Nothing Phone 1', 29999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+    </section>
+    <h2>Top Rated Products</h2>
+    <section>
+        <div class="card">
+            <a href= "s23ultra.html"><img src="images/Samsung Galaxy S23 Ultra/4.jpg" alt="Samsung S23 Ultra"></a>
+            <div class="card-content">
+                <div class="card-title">Samsung S23 Ultra</div>
+                <div class="card-description">SAMSUNG Galaxy S23 Ultra 5G (Phantom Black, 256 GB)  (12 GB RAM)</div>
+                <div class="rr">20M+ reviews | 4.9🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 124,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Samsung S23 Ultra', 124999)">Add to Cart</a></button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <a href= "airpods.html"><img src="images/Airpods/1.jpg" alt="Apple Airpods"></a>
+            <div class="card-content">
+                <div class="card-title">Apple Airpods</div>
+                <div class="card-description">Apple AirPods(2nd gen) with Charging Case Bluetooth Headset with Mic  (White, True Wireless)</div>
+                <div class="rr">1B+ reviews | 4.7🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 9,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Apple Airpods', 9999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <a href= "nothingphone1.html"><img src="images/Nothing Phone 1/4.jpg" alt="Nothing Phone 1"></a>
+            <div class="card-content">
+                <div class="card-title">Nothing Phone 1</div>
+                <div class="card-description">Nothing Phone (1) (Black, 128 GB)  (8 GB RAM)</div>
+                <div class="rr">1.03M+ reviews | 4.5🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 29,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Nothing Phone 1', 29999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+    </section>
+    <h2>Top Reviewed Products</h2>
+    <section>
+        <div class="card">
+            <a href= "s23ultra.html"><img src="images/Samsung Galaxy S23 Ultra/4.jpg" alt="Samsung S23 Ultra"></a>
+            <div class="card-content">
+                <div class="card-title">Samsung S23 Ultra</div>
+                <div class="card-description">SAMSUNG Galaxy S23 Ultra 5G (Phantom Black, 256 GB)  (12 GB RAM)</div>
+                <div class="rr">20M+ reviews | 4.9🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 124,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Samsung S23 Ultra', 124999)">Add to Cart</a></button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <a href= "nothingphone1.html"><img src="images/Nothing Phone 1/4.jpg" alt="Nothing Phone 1"></a>
+            <div class="card-content">
+                <div class="card-title">Nothing Phone 1</div>
+                <div class="card-description">Nothing Phone (1) (Black, 128 GB)  (8 GB RAM)</div>
+                <div class="rr">1.03M+ reviews | 4.5🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 29,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Nothing Phone 1', 29999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <a href= "airpods.html"><img src="images/Airpods/1.jpg" alt="Apple Airpods"></a>
+            <div class="card-content">
+                <div class="card-title">Apple Airpods</div>
+                <div class="card-description">Apple AirPods(2nd gen) with Charging Case Bluetooth Headset with Mic  (White, True Wireless)</div>
+                <div class="rr">1B+ reviews | 4.7🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 9,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Apple Airpods', 9999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+    </section>
+    <h2>Recommended Products</h2>
+    <section>
+        <div class="card">
+            <a href= "nothingphone1.html"><img src="images/Nothing Phone 1/4.jpg" alt="Nothing Phone 1"></a>
+            <div class="card-content">
+                <div class="card-title">Nothing Phone 1</div>
+                <div class="card-description">Nothing Phone (1) (Black, 128 GB)  (8 GB RAM)</div>
+                <div class="rr">1.03M+ reviews | 4.5🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 29,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Nothing Phone 1', 29999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <a href= "s23ultra.html"><img src="images/Samsung Galaxy S23 Ultra/4.jpg" alt="Samsung S23 Ultra"></a>
+            <div class="card-content">
+                <div class="card-title">Samsung S23 Ultra</div>
+                <div class="card-description">SAMSUNG Galaxy S23 Ultra 5G (Phantom Black, 256 GB)  (12 GB RAM)</div>
+                <div class="rr">20M+ reviews | 4.9🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 124,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Samsung S23 Ultra', 124999)">Add to Cart</a></button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <a href= "airpods.html"><img src="images/Airpods/1.jpg" alt="Apple Airpods"></a>
+            <div class="card-content">
+                <div class="card-title">Apple Airpods</div>
+                <div class="card-description">Apple AirPods(2nd gen) with Charging Case Bluetooth Headset with Mic  (White, True Wireless)</div>
+                <div class="rr">1B+ reviews | 4.7🌟 avg. rating</div>
+                <div class="card-price">Starting Rs 9,999*</div>
+                <button class="card-button" value="Add to Basket" onclick="addToCart('Apple Airpods', 9999)">Add to Cart</button>
+                <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">&copy;<span id="year"> </span><span> 360 Store. All rights reserved.</span></div>
+        <div>
+            <img src="images/360-logo.png" id="brand" alt="360 Store">
+        </div>
+    </footer>
+    <script>
+        let cartWindow = null;
+    
+        function openCart() {
+          if (!cartWindow || cartWindow.closed) {
+            cartWindow = window.open('cart.html');
+          }
+        }
+    
+        function addToCart(productName, price) {
+          if (!cartWindow || cartWindow.closed) {
+            cartWindow = window.open('cart.html');
+          }
+    
+          const productInfo = {
+            productName: productName,
+            price: price
+          };
+          cartWindow.postMessage(productInfo, '*');
+        }
+      </script>
+</body>
+</html>

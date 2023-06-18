@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="icon" href="images/360-logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="images/360-logo.png" alt="360 Store">
+            </div>
+            <div id="search">
+                <input type="text" id="search_box" placeholder="Search for products, brands and more...">
+                <input type="button" id="search_button" value="🔍">
+            </div>
+            <label for="language"></label>
+            <select name="language" id="language">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="French">French</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbutton">Account
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="register.html">Sign-In/Up</a>
+                    <a href="orders.html">Orders</a>
+                </div>
+            </div>
+            <a href="cart.html">MyBasket <img src="images/Cart.png"></a>
+        </nav>
+        <div class="navbar">
+            <a href="airpods.html"><img src="images/AppleLogo.png"></a>
+            <a href="s23ultra.html"><img src="images/SamsungLogo.png"></a>
+            <a href="nothingphone1.html"><img src="images/NothingLogo.png"></a>
+        </div>
+    </header>
+    <br><br><br>
+    <h2>Order History</h2>
+    <section class="orders" style="flex-wrap: wrap; justify-content: space-evenly;">
+        <div class="card">
+            <a href= ""><img src="images/earphones.jpg" alt="Boult Audio Bassbuds X1 Wired Headset"></a>
+            <div class="card-content">
+                <div class="card-title">Boult Audio Bassbuds X1 Wired Headset</div>
+                <div class="rr">Delivered on April 17</div>
+                <div class="card-price">Purchase Amount : Rs 349</div>
+            </div>
+        </div>
+        <div class="card">
+            <a href= ""><img src="images/mobilecase.jpg" alt="KWINE CASE Back Cover"></a>
+            <div class="card-content">
+                <div class="card-title">KWINE CASE Back Cover</div>
+                <div class="rr">Delivered on March 15</div>
+                <div class="card-price">Purchase Amount : Rs 268</div>
+            </div>
+        </div>
+        <div class="card">
+            <a href= ""><img src="images/cycle.png" alt="Urban Terrain UT2000 MTB 27.5T"></a>
+            <div class="card-content">
+                <div class="card-title">Urban Terrain UT2000 MTB 27.5T</div>
+                <div class="rr">Delivered on January 20</div>
+                <div class="card-price">Purchase Amount : Rs 11,499</div>
+            </div>
+        </div>
+        <div class="card">
+            <a href= ""><img src="images/watches.jpg" alt="Casio D135 Youth Watch - For Men"></a>
+            <div class="card-content">
+                <div class="card-title">Casio D135 Youth Watch - For Men</div>
+                <div class="rr">Delivered on December 26, 2018</div>
+                <div class="card-price">Purchase Amount : Rs 2,290</div>
+            </div>
+        </div>
+        <div class="card">
+            <a href= ""><img src="images/shirts.jpg" alt="Medium Check T-shirt for Men"></a>
+            <div class="card-content">
+                <div class="card-title">Medium Check T-shirt for Men</div>
+                <div class="rr">Delivered on July 17, 2017</div>
+                <div class="card-price">Purchase Amount : Rs 399</div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">&copy;<span id="year"> </span><span> 360 Store. All rights reserved.</span></div>
+        <div>
+            <img src="images/360-logo.png" id="brand" alt="360 Store">
+        </div>
+    </footer>
+</body>
+</html>
