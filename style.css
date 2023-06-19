@@ -227,6 +227,16 @@ section ul li{
     scale: 1.1;
 }
 
+/* Card animations #Order Section */
+.fadeIn {
+    opacity: 0.4;
+    transition: opacity 1s ease-in-out;
+}
+  
+.fadeIn.fadeIn-active {
+    opacity: 1;
+}  
+
 /* Review Section */
 .review {
     background-color: beige;
