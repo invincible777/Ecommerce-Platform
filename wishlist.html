@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="icon" href="images/360-logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <img src="images/360-logo.png" alt="360 Store">
+            </div>
+            <div id="search">
+                <input type="text" id="search_box" placeholder="Search for products, brands and more...">
+                <input type="button" id="search_button" value="🔍">
+            </div>
+            <label for="language"></label>
+            <select name="language" id="language">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="French">French</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbutton">Account
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="register.html">Sign-In/Up</a>
+                    <a href="wishlist.html">Wishlist</a>
+                    <a href="orders.html">Orders</a>
+                </div>
+            </div>
+            <a href="cart.html">MyBasket <img src="images/Cart.png"></a>
+            <a href="contactus.html">Contact</a>
+        </nav>
+        <div class="navbar">
+            <a href="airpods.html"><img src="images/AppleLogo.png"></a>
+            <a href="s23ultra.html"><img src="images/SamsungLogo.png"></a>
+            <a href="nothingphone1.html"><img src="images/NothingLogo.png"></a>
+        </div>
+    </header>
+    <h2>Wishlist</h2>
+    <section class="orders" style="flex-wrap: wrap; justify-content: space-evenly; align-items: center;">
+        <div id="root"></div>
+    </section>
+    <footer>
+        <div class="footer">&copy;<span id="year"> </span><span> 360 Store. All rights reserved.</span></div>
+        <div>
+            <img src="images/360-logo.png" id="brand" alt="360 Store">
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script type="text/babel">
+        function Card({ imageSrc, title, purchaseAmount }) {
+            return (
+                <div className="card">
+                    <a href=""><img src={imageSrc} alt={title} /></a>
+                    <div className="card-content">
+                        <div className="card-title">{title}</div>
+                        <div className="card-price">Live Price: {purchaseAmount}</div>
+                    </div>
+                </div>
+            );
+        }
+
+        const ordersContainer = document.getElementById('root');
+        ReactDOM.render(
+            <div>
+                <Card
+                    imageSrc="images/earphones.jpg"
+                    title="Boult Audio Bassbuds X1 Wired Headset"
+                    deliveryDate="April 17"
+                    purchaseAmount="Rs 349"
+                />
+                <Card
+                    imageSrc="images/mobilecase.jpg"
+                    title="KWINE CASE Back Cover"
+                    deliveryDate="March 15"
+                    purchaseAmount="Rs 268"
+                />
+                <Card
+                    imageSrc="images/cycle.png"
+                    title="Urban Terrain UT2000 MTB 27.5T"
+                    deliveryDate="January 20"
+                    purchaseAmount="Rs 11,499"
+                />
+                <Card
+                    imageSrc="images/watches.jpg"
+                    title="Casio D135 Youth Watch - For Men"
+                    deliveryDate="December 26, 2018"
+                    purchaseAmount="Rs 2,290"
+                />
+                <Card
+                    imageSrc="images/shirts.jpg"
+                    title="Medium Check T-shirt for Men"
+                    deliveryDate="July 17, 2017"
+                    purchaseAmount="Rs 399"
+                />
+            </div>,
+            ordersContainer
+        );
+    </script>
+</body>
+</html>

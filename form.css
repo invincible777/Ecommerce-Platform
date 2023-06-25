@@ -58,7 +58,7 @@
     font-weight: 600;
 }
 
-.register-body p input {
+.register-body p input, #message {
     width: 100%;
     padding: 7px;
     text-align: left;

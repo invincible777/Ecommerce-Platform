@@ -31,10 +31,12 @@
                 </button>
                 <div class="dropdown-content">
                     <a href="register.html">Sign-In/Up</a>
+                    <a href="wishlist.html">Wishlist</a>
                     <a href="orders.html">Orders</a>
                 </div>
             </div>
             <a href="#" onclick="openCart()">MyBasket <img src="images/Cart.png"></a>
+            <a href="contactus.html">Contact</a>
         </nav>
         <div class="navbar">
             <a href="airpods.html"><img src="images/AppleLogo.png"></a>
@@ -78,7 +80,7 @@
             </div>
         </div>
     </section>
-    <h2>Top Rated Products</h2>
+    <!-- <h2>Top Rated Products</h2>
     <section>
         <div class="card">
             <a href= "s23ultra.html"><img src="images/Samsung Galaxy S23 Ultra/4.jpg" alt="Samsung S23 Ultra"></a>
@@ -185,13 +187,14 @@
                 <button class="card-button" value="Go to Cart" onclick="openCart()">Go to Cart</button>
             </div>
         </div>
-    </section>
+    </section> -->
     <footer>
         <div class="footer">&copy;<span id="year"> </span><span> 360 Store. All rights reserved.</span></div>
         <div>
             <img src="images/360-logo.png" id="brand" alt="360 Store">
         </div>
     </footer>
+
     <script>
         let cartWindow = null;
     
@@ -209,5 +212,6 @@
           cartWindow.postMessage(productInfo, '*');
         }
       </script>
+      
 </body>
 </html>

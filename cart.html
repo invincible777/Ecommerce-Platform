@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Basket</title>
-    <link rel="icon" href="images/Cart.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cart.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Basket</title>
+  <link rel="icon" href="images/Cart.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div>
-                <img src="images/360-logo.png" alt="360 Store">
-            </div>
-            <div id="search">
-                <input type="text" id="search_box" placeholder="Search for products, brands and more...">
-                <input type="button" id="search_button" value="🔍">
-            </div>
-            <label for="language"></label>
-            <select name="language" id="language">
-                <option value="English">English</option>
-                <option value="Hindi">Hindi</option>
-                <option value="French">French</option>
-                <option value="Spanish">Spanish</option>
-            </select>
-            <a href="index.html">Home</a>
-            <div class="dropdown">
-                <button class="dropbutton">Account
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="register.html">Sign-In/Up</a>
-                    <a href="orders.html">Orders</a>
-                </div>
-            </div>
-            <a href="#" onclick="openCart()">MyBasket <img src="images/Cart.png"></a>
-        </nav>
-        <div class="navbar">
-            <a href="airpods.html"><img src="images/AppleLogo.png"></a>
-            <a href="s23ultra.html"><img src="images/SamsungLogo.png"></a>
-            <a href="nothingphone1.html"><img src="images/NothingLogo.png"></a>
+  <header>
+    <nav>
+      <div>
+        <img src="images/360-logo.png" alt="360 Store">
+      </div>
+      <div id="search">
+        <input type="text" id="search_box" placeholder="Search for products, brands, and more...">
+        <input type="button" id="search_button" value="🔍">
+      </div>
+      <label for="language"></label>
+      <select name="language" id="language">
+        <option value="English">English</option>
+        <option value="Hindi">Hindi</option>
+        <option value="French">French</option>
+        <option value="Spanish">Spanish</option>
+      </select>
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbutton">Account
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="register.html">Sign-In/Up</a>
+          <a href="wishlist.html">Wishlist</a>
+          <a href="orders.html">Orders</a>
         </div>
-    </header>
+      </div>
+      <a href="#" onclick="openCart()">My Basket <img src="images/Cart.png"></a>
+      <a href="contactus.html">Contact</a>
+    </nav>
+    <div class="navbar">
+      <a href="airpods.html"><img src="images/AppleLogo.png" alt="Apple"></a>
+      <a href="s23ultra.html"><img src="images/SamsungLogo.png" alt="Samsung"></a>
+      <a href="nothingphone1.html"><img src="images/NothingLogo.png" alt="Nothing"></a>
+    </div>
+  </header>
+
   <div class="container">
     <h1>Your Cart</h1>
-    
+
     <table id="cart-table">
       <tr>
         <th>Product</th>
@@ -55,136 +60,138 @@
       </tr>
     </table>
   </div>
-    <footer style="position: absolute; bottom: 0; width: 100%">
-        <div class="footer">&copy;<span id="year"> </span><span> 360 Store. All rights reserved.</span></div>
-        <div>
-            <img src="images/360-logo.png" id="brand" alt="360 Store">
-        </div>
-    </footer>
 
-    <script>
-      const cartItems = [];
-    
-      function addToCart(productName, price) {
-        let cartItem = cartItems.find(item => item.productName === productName);
-    
-        if (cartItem) {
-          cartItem.count++;
-        } else {
-          cartItem = {
-            productName,
-            price,
-            count: 1
-          };
-          cartItems.push(cartItem);
-        }
-    
-        renderCart();
+  <footer style="position: absolute; bottom: 0; width: 100%">
+    <div class="footer">&copy;<span id="year"> </span><span> 360 Store. All rights reserved.</span></div>
+    <div>
+      <img src="images/360-logo.png" id="brand" alt="360 Store">
+    </div>
+  </footer>
+
+  <script>
+    let cartItems = [];
+
+    function addToCart(productName, price) {
+      let cartItem = cartItems.find(item => item.productName === productName);
+
+      if (cartItem) {
+        cartItem.count++;
+      } else {
+        cartItem = {
+          productName,
+          price,
+          count: 1
+        };
+        cartItems.push(cartItem);
       }
-    
-      function removeFromCart(productName) {
-        cartItems = cartItems.filter(item => item.productName !== productName);
-        renderCart();
+
+      renderCart();
+    }
+
+    function removeFromCart(productName) {
+      cartItems = cartItems.filter(item => item.productName !== productName);
+      renderCart();
+    }
+
+    function increaseCount(productName) {
+      let cartItem = cartItems.find(item => item.productName === productName);
+      if (cartItem) {
+        cartItem.count++;
       }
-    
-      function increaseCount(productName) {
-        let cartItem = cartItems.find(item => item.productName === productName);
-        if (cartItem) {
-          cartItem.count++;
-        }
-        renderCart();
+      renderCart();
+    }
+
+    function decreaseCount(productName) {
+      let cartItem = cartItems.find(item => item.productName === productName);
+      if (cartItem && cartItem.count > 1) {
+        cartItem.count--;
       }
-    
-      function decreaseCount(productName) {
-        let cartItem = cartItems.find(item => item.productName === productName);
-        if (cartItem && cartItem.count > 1) {
-          cartItem.count--;
-        }
-        renderCart();
-      }
-    
-      function renderCart() {
-        const cartTable = document.getElementById('cart-table');
-        cartTable.innerHTML = `
-          <tr>
-            <th>Product</th>
-            <th>Count</th>
-            <th>Price</th>
-            <th>Action</th>
-          </tr>
-        `;
-    
-        let totalAmount = 0;
-    
-        cartItems.forEach(item => {
-          const row = document.createElement('tr');
-    
-          const productNameCell = document.createElement('td');
-          productNameCell.textContent = item.productName;
-          row.appendChild(productNameCell);
-    
-          const countCell = document.createElement('td');
-          countCell.textContent = item.count;
-          row.appendChild(countCell);
-    
-          const priceCell = document.createElement('td');
-          priceCell.textContent = item.price;
-          row.appendChild(priceCell);
-    
-          const actionCell = document.createElement('td');
-    
-          const removeButton = document.createElement('button');
-          removeButton.textContent = 'Remove';
-          removeButton.onclick = () => {
-            removeFromCart(item.productName);
-          };
-          actionCell.appendChild(removeButton);
-    
-          const decreaseButton = document.createElement('button');
-          decreaseButton.textContent = '-';
-          decreaseButton.onclick = () => {
-            decreaseCount(item.productName);
-          };
-          actionCell.appendChild(decreaseButton);
-    
-          const increaseButton = document.createElement('button');
-          increaseButton.textContent = '+';
-          increaseButton.onclick = () => {
-            increaseCount(item.productName);
-          };
-          actionCell.appendChild(increaseButton);
-    
-          row.appendChild(actionCell);
-    
-          cartTable.appendChild(row);
-    
-          totalAmount += item.price * item.count;
-        });
-    
-        const summaryRow = document.createElement('tr');
-        summaryRow.className = 'cart-summary-row';
-    
-        const emptyCell1 = document.createElement('td');
-        const emptyCell2 = document.createElement('td');
-    
-        const totalAmountLabelCell = document.createElement('td');
-        totalAmountLabelCell.innerHTML = '<strong>Total Amount:</strong>';
-    
-        const totalAmountCell = document.createElement('td');
-        totalAmountCell.textContent = totalAmount.toFixed(2);
-    
-        summaryRow.appendChild(emptyCell1);
-        summaryRow.appendChild(emptyCell2);
-        summaryRow.appendChild(totalAmountLabelCell);
-        summaryRow.appendChild(totalAmountCell);
-    
-        cartTable.appendChild(summaryRow);
-      }
-    
-      window.addEventListener('message', event => {
-        const productInfo = event.data;
-        addToCart(productInfo.productName, productInfo.price);
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartTable = document.getElementById('cart-table');
+      cartTable.innerHTML = `
+        <tr>
+          <th>Product</th>
+          <th>Count</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      `;
+
+      let totalAmount = 0;
+
+      cartItems.forEach(item => {
+        const row = document.createElement('tr');
+
+        const productNameCell = document.createElement('td');
+        productNameCell.textContent = item.productName;
+        row.appendChild(productNameCell);
+
+        const countCell = document.createElement('td');
+        countCell.textContent = item.count;
+        row.appendChild(countCell);
+
+        const priceCell = document.createElement('td');
+        priceCell.textContent = item.price;
+        row.appendChild(priceCell);
+
+        const actionCell = document.createElement('td');
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.onclick = () => {
+          removeFromCart(item.productName);
+        };
+        actionCell.appendChild(removeButton);
+
+        const decreaseButton = document.createElement('button');
+        decreaseButton.textContent = '-';
+        decreaseButton.onclick = () => {
+          decreaseCount(item.productName);
+        };
+        actionCell.appendChild(decreaseButton);
+
+        const increaseButton = document.createElement('button');
+        increaseButton.textContent = '+';
+        increaseButton.onclick = () => {
+          increaseCount(item.productName);
+        };
+        actionCell.appendChild(increaseButton);
+
+        row.appendChild(actionCell);
+
+        cartTable.appendChild(row);
+
+        totalAmount += item.price * item.count;
       });
-    </script>    
+
+      const summaryRow = document.createElement('tr');
+      summaryRow.className = 'cart-summary-row';
+
+      const emptyCell1 = document.createElement('td');
+      const emptyCell2 = document.createElement('td');
+
+      const totalAmountLabelCell = document.createElement('td');
+      totalAmountLabelCell.innerHTML = '<strong>Total Amount:</strong>';
+
+      const totalAmountCell = document.createElement('td');
+      totalAmountCell.textContent = totalAmount.toFixed(2);
+
+      summaryRow.appendChild(emptyCell1);
+      summaryRow.appendChild(emptyCell2);
+      summaryRow.appendChild(totalAmountLabelCell);
+      summaryRow.appendChild(totalAmountCell);
+
+      cartTable.appendChild(summaryRow);
+    }
+
+    window.addEventListener('message', event => {
+      const productInfo = event.data;
+      addToCart(productInfo.productName, productInfo.price);
+    });
+  </script>
 </body>
+
 </html>

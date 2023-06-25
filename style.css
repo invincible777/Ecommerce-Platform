@@ -61,7 +61,7 @@ nav a, nav button{
     color: white;
     padding: 11px;
     border-radius: 0 0 100% 100%;
-    font-size: 25px;
+    font-size: 17px;
     flex-grow: 0.3;
 }
 
@@ -71,7 +71,7 @@ nav a, nav button{
     background-color: black;
 }
 
-.dropdown .dropbtn {
+.dropdown .dropbutton {
     font-size: 16px;
     border: none;
     outline: none;
@@ -96,7 +96,7 @@ nav a:hover, nav button:hover, .dropdown:hover .dropbtn {
     float: none;
     background-color: black;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     margin: 1px;
     border-radius: 0;
     text-decoration: none;
